@@ -231,6 +231,7 @@ print([fun3(n) for n in range(10)]) # [1, 3, 3, 9, 27, 243, 6561, 1594323, 10460
 print([fun4(n) for n in range(10)]) # [1, 5, 6, 31, 67, 1028, 5517, 1062301, 31499590, 1128514914191]
 '''
 
+'''
 seq1 = [k**3 for k in range(54)]
 
 seq2 = [(2**k -2) for k in range(28)]
@@ -244,3 +245,28 @@ print(sum(seq1)) # 2047761
 print(sum(seq2)) # 268435392
 print(sum(seq3)) # 6656947
 print(sum(seq4)) # 255.75
+'''
+
+def gcd(x,y):
+    for n in range(min(x,y),1,-1):
+        if x % n == 0 and y % n == 0:
+            return n
+    return 1
+
+def lcm(x, y):
+    return (x*y)//gcd(x,y)
+
+
+print(gcd(12,15)) # 3
+print(gcd(12,24)) # 12
+print(gcd(12,18)) # 6 
+print(gcd(7,13))  # 1
+print(gcd(1,2))   # 1
+print(gcd(5,5))   # 5
+print("===================")
+print(lcm(12,15)) # 60
+print(lcm(12,24)) # 24
+print(lcm(12,18)) # 36 
+print(lcm(7,13))  # 91
+print(lcm(1,2))   # 2
+print(lcm(5,5))   # 5

@@ -9,7 +9,7 @@ file completed or uncompleted in a public file sharing site.
 
 **Section**: W24-02
 
-**Teacher**:
+**Teacher**: Brother Macbeth
 
 ## Question 1 (5 points)
 
@@ -17,11 +17,11 @@ Evaluate the following as "True" or "False":
 
 |Expression|Answer|
 |:-:|:-:|
-|$3 \vert 12$||
-|$3 \vert 13$||
-|$14 \vert 58$||
-|$73 \vert 1752$||
-|$73 \vert 1753$||
+|$3 \vert 12$|True|
+|$3 \vert 13$|False|
+|$14 \vert 58$|False|
+|$73 \vert 1752$|True|
+|$73 \vert 1753$|False|
 
 ## Question 2 (5 points)
 
@@ -29,11 +29,11 @@ Given the following expressions, solve for $n$:
 
 |Expressions|$n$|
 |:-:|:-:|
-|$n \text{ div } 11 = 4 \text{ , } n \text{ mod } 11 = 3$||
-|$n \text{ div } 5 = 8 \text{ , } n \text{ mod } 5 = 1$||
-|$n \text{ div } 7 = 9 \text{ , } n \text{ mod } 7 = 0$||
-|$n \text{ div } 15 = 4 \text{ , } n \text{ mod } 15 = 7$||
-|$n \text{ div } 13 = -2 \text{ , } n \text{ mod } 13 = 3$||
+|$n \text{ div } 11 = 4 \text{ , } n \text{ mod } 11 = 3$|47|
+|$n \text{ div } 5 = 8 \text{ , } n \text{ mod } 5 = 1$|41|
+|$n \text{ div } 7 = 9 \text{ , } n \text{ mod } 7 = 0$|63|
+|$n \text{ div } 15 = 4 \text{ , } n \text{ mod } 15 = 7$|67|
+|$n \text{ div } 13 = -2 \text{ , } n \text{ mod } 13 = 3$|-23|
 
 ## Question 3 (6 points)
 
@@ -41,21 +41,21 @@ For the given values of $x$, $y$, and $m$, determine if $x \equiv y (\text{mod }
 
 |$x$|$y$|$m$|$x \equiv y (\text{mod } m)$|
 |:-:|:-:|:-:|:-:|
-|24|32|3||
-|24|80|7||
-|83|59|8||
-|222|122|10||
-|17|6|5||
-|81|37|11||
+|24|32|3|No|
+|24|80|7|Yes|
+|83|59|8|Yes|
+|222|122|10|Yes|
+|17|6|5|No|
+|81|37|11|Yes|
 
 ## Question 4 (15 points)
 Find the GCD and LCM of the following numbers shown in non-decresasing prime factorization format.  Write your answers using non-decreasing prime factorization.  The first GCD one is done for you.
 
 |$x$|$y$|$GCD(x,y)$|$LCM(x,y)$|
 |:-:|:-:|:-:|:-:|
-|$2^3 \sdot 3^2 \sdot 5$|$2 \sdot 3^3 \sdot 5^2 \sdot 7$|$2 \sdot 3^2 \sdot 5$||
-|$2 \sdot 5^3 \sdot 7 \sdot 11^2$|$2^3 \sdot 3 \sdot 5 \sdot 11$|||
-|$2^2 \sdot 3 \sdot 7^2 \sdot 13$|$2 \sdot 3^2 \sdot 5 \sdot 7 \sdot 13^2$|||
+|$2^3 \sdot 3^2 \sdot 5$|$2 \sdot 3^3 \sdot 5^2 \sdot 7$|$2 \sdot 3^2 \sdot 5$|$2^3 \sdot 3^3 \sdot 5^2 \sdot 7$|
+|$2 \sdot 5^3 \sdot 7 \sdot 11^2$|$2^3 \sdot 3 \sdot 5 \sdot 11$|$2 \sdot 5 \sdot 11$|$2^3 \sdot 3 \sdot 5^3 \sdot 7 \sdot 11^2$|
+|$2^2 \sdot 3 \sdot 7^2 \sdot 13$|$2 \sdot 3^2 \sdot 5 \sdot 7 \sdot 13^2$|$2 \sdot 3 \sdot 7 \sdot 13$|$2^2 \sdot 3^2 \sdot 5 \sdot 7^2 \sdot 13^2$|
 
 ## Question 5 (7 points)
 
@@ -65,13 +65,13 @@ $S = \lbrace -48, -26, 1, 8, 3, 70, 24, 32, 11, 5, 27, 19, 49 \rbrace$
 
 |Equivalence Class|Values in Equivalance Class|
 |:-:|:-:|
-|$[0]$|$\lbrace  \rbrace$|
-|$[1]$|$\lbrace  \rbrace$|
-|$[2]$|$\lbrace  \rbrace$|
-|$[3]$|$\lbrace  \rbrace$|
-|$[4]$|$\lbrace  \rbrace$|
-|$[5]$|$\lbrace  \rbrace$|
-|$[6]$|$\lbrace  \rbrace$|
+|$[0]$|$\lbrace 70, 49 \rbrace$|
+|$[1]$|$\lbrace -48, 1, 8 \rbrace$|
+|$[2]$|$\lbrace -26 \rbrace$|
+|$[3]$|$\lbrace 3, 24 \rbrace$|
+|$[4]$|$\lbrace 32, 11 \rbrace$|
+|$[5]$|$\lbrace 5, 19 \rbrace$|
+|$[6]$|$\lbrace 27 \rbrace$|
 
 ## Question 6 (12 points)
 
@@ -85,8 +85,13 @@ def gcd(x,y):
     return 1
 
 def lcm(x, y):
-    # Add your code here
-    pass
+    y_mult = y
+    while(y_mult % x != 0):
+        y_mult += y
+    return y_mult
+
+    #or return (x*y)//gcd(x,y)
+
 
 print(gcd(12,15)) # 3
 print(gcd(12,24)) # 12
