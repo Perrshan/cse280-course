@@ -246,7 +246,7 @@ print(sum(seq2)) # 268435392
 print(sum(seq3)) # 6656947
 print(sum(seq4)) # 255.75
 '''
-
+'''
 def gcd(x,y):
     for n in range(min(x,y),1,-1):
         if x % n == 0 and y % n == 0:
@@ -270,3 +270,16 @@ print(lcm(12,18)) # 36
 print(lcm(7,13))  # 91
 print(lcm(1,2))   # 2
 print(lcm(5,5))   # 5
+'''
+a = 0
+s = 0
+
+while a != 1:
+    s += 1
+    a = s*83 % 96
+    if a == 1:
+        print(s)
+
+print(a)
+
+print(-37*83 + 32*96)
