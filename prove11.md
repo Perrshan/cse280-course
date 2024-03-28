@@ -108,15 +108,15 @@ def gcd_ext(x,y):
         (old_s, s) = (s, old_s - q * s)
         (old_t, t) = (t, old_t - q * t)
     return (old_r, old_s, old_t)
-``````
+```
 
 Answers:
 * $p = 137$
 * $q = 211$
-* $N = $
-* $\phi = $
-* $e = $
-* $d = $
+* $N = 28907$
+* $\phi = 28560$
+* $e = 11$
+* $d = 2197$
 
 ### Part 2
 
@@ -126,16 +126,19 @@ The values of $N$ and $e$ are the public keys.  The value of $d$ is the private 
 # Put your values from Part 1
 p = 137
 q = 211
-e = 
-N = 
-phi = 
-d = 
+e = 13
+N = 28907
+phi = 28560
+d = 2197
 
 m = 5645
 # Write code to encrypt 'm' and display it
+encoded_m = (m**e) % N
+print(encoded_m) #17468
 
 # Write code to decrypt it back again and display it.   It should be 5645 again.
-
+decoded_m = (encoded_m**d) % N
+print(decoded_m) #5645
 ```
 
   

@@ -271,15 +271,72 @@ print(lcm(7,13))  # 91
 print(lcm(1,2))   # 2
 print(lcm(5,5))   # 5
 '''
-a = 0
-s = 0
 
-while a != 1:
-    s += 1
-    a = s*83 % 96
-    if a == 1:
-        print(s)
+'''
+# def gcd_ext(x,y):
 
-print(a)
+#     (old_r, r) = (x, y)
+#     (old_s, s) = (1, 0)
+#     (old_t, t) = (0, 1)
+#     while r != 0:
+#         q = old_r // r
+#         (old_r, r) = (r, old_r - q * r)
+#         (old_s, s) = (s, old_s - q * s)
+#         (old_t, t) = (t, old_t - q * t)
+#     return (old_r, old_s, old_t)
 
-print(-37*83 + 32*96)
+# def gcd(x,y):
+#     for n in range(min(x,y),1,-1):
+#         if x % n == 0 and y % n == 0:
+#             return n
+#     return 1
+
+# phi = (137-1)*(211-1)
+# e = 11
+# d = 0
+# ans = 0
+
+# while ans != 1:
+#     e += 1
+#     ans = gcd(e, phi)
+#     if ans == 1:
+#         print(ans)
+#         print(e)
+
+# print(gcd_ext(e, phi))
+
+# print(2197*e % phi)
+# print(gcd_ext())
+
+# print(-7789*11 + 3*phi)
+
+# print(137*211)
+
+# Put your values from Part 1
+p = 137
+q = 211
+e = 13
+N = 28907
+phi = 28560
+d = 2197
+
+m = 5645
+# Write code to encrypt 'm' and display it
+encoded_m = (m**e) % N
+print(encoded_m)
+
+# Write code to decrypt it back again and display it.   It should be 5645 again.
+decoded_m = (encoded_m**d) % N
+print(decoded_m)
+'''
+
+from math import factorial
+# factorial(6) = 6! = 720
+
+def P(n,r):
+    return factorial(n) // factorial(n-r)
+
+def C(n,r):
+    return factorial(n) // (factorial(r) * factorial(n-r))
+
+print(C(8,5))
